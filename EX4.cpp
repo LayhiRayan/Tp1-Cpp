@@ -1,5 +1,4 @@
 #include <iostream>
-#include <climits>
 
 int main() {
     int l, c;
@@ -25,10 +24,13 @@ int main() {
         std::cout << std::endl;
     }
 
-    int max = INT_MIN;
-    int indice_max = -1;
+    int indice_max = 0;
+    int max = 0;
+    for (int j = 0; j < c; j++) {
+        max += tab[0][j];
+    }
 
-    for (int i = 0; i < l; i++) {
+    for (int i = 1; i < l; i++) {
         int s = 0;
         for (int j = 0; j < c; j++) {
             s += tab[i][j];
@@ -40,8 +42,8 @@ int main() {
         }
     }
 
-    std::cout << "\nLa ligne avec la plus grande somme est la ligne " << (indice_max + 1)
-              << " avec une somme de " << max << ".\n";
+    std::cout << "\nLa ligne avec la plus grande somme est la ligne " 
+              << (indice_max + 1) << " avec une somme de " << max << ".\n";
     std::cout << "Éléments de cette ligne : ";
     for (int j = 0; j < c; j++) {
         std::cout << tab[indice_max][j] << " ";
@@ -50,3 +52,4 @@ int main() {
 
     return 0;
 }
+

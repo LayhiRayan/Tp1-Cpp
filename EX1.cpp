@@ -1,24 +1,15 @@
 #include <iostream>
-#include <vector>
 
 int main() {
-    std::vector<int> tab;
-    tab.push_back(1);
-    tab.push_back(1);
-    tab.push_back(2);
-    tab.push_back(2);
-    tab.push_back(3);
-    tab.push_back(4);
-    tab.push_back(4);
-    tab.push_back(5);
-    tab.push_back(5);
+    int tab[] = {1, 1, 2, 2, 3, 4, 4, 5, 5};
+    int taille = sizeof(tab) / sizeof(tab[0]);
 
-    for (size_t i = 0; i < tab.size(); ++i) {
-        bool unique = true; 
+    for (int i = 0; i < taille; ++i) {
+        bool unique = true;
 
-        for (size_t j = 0; j < tab.size(); ++j) {
+        for (int j = 0; j < taille; ++j) {
             if (i != j && tab[i] == tab[j]) {
-                unique = false; 
+                unique = false;
                 break;
             }
         }
@@ -32,3 +23,4 @@ int main() {
     std::cout << "Aucun nombre unique trouvé." << std::endl;
     return 0;
 }
+
